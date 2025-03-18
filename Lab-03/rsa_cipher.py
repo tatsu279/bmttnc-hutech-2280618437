@@ -33,7 +33,7 @@ class MyApp(QMainWindow):
         url = "http://127.0.0.1:5000/api/rsa/encrypt"
         payload = {
             "plain_text": self.ui.txt_plain_text.text(),
-            "key": self.ui.txt_info.text()
+            "key": "public"
         }
         try:
             response = requests.post(url, json=payload)
@@ -53,7 +53,7 @@ class MyApp(QMainWindow):
         url = "http://127.0.0.1:5000/api/rsa/decrypt"
         payload = {
             "cipher_text": self.ui.txt_cipher_text.text(),
-            "key": self.ui.txt_info.text()
+            "key": "private"
         }
         try:
             response = requests.post(url, json=payload)

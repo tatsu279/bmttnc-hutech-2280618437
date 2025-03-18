@@ -29,7 +29,7 @@ def rsa_encrypt():
 @app.route('/api/rsa/decrypt', methods=['POST'])
 def rsa_decrypt():
     data = request.json
-    cipher_text = data['ciphertext']
+    cipher_text = data['cipher_text']
     key = data['key']
     private_key, public_key = rsa_cipher.load_keys()
     if key == 'public':
